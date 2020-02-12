@@ -16,4 +16,4 @@ ORDER BY nombre_columna [ ASC / DESC ]
 
 `FROM`: indica la tabla de la que se van a coger los datos.
 
-Tanto en el SELECT como en el FROM podemos renombrar columnas y filas (respectivamente) con la cláusula AS. Es muy útil ya que hace que la consulta y su resultado sea más declarativo y por lo tanto más sencillo de entender.
+Tanto en el SELECT como en el FROM podemos renombrar columnas y filas (respectivamente) con la cláusula **AS**. Es muy útil ya que hace que la consulta y su resultado sea más declarativo y por lo tanto más sencillo de entender.
