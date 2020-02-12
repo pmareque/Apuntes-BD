@@ -1,1 +1,10 @@
-Apuntes BD
+# SQL DQL (Data Query Language)
+
+DQL es uno de los sublenguajes SQL utilizado para realizar **consultas** en bases de datos. El ejemplo principal de DQL es la instrucción **SELECT**, la cual nos permite **recuperar datos** almacenados de una base de datos.
+Esta es la sintaxis básica de una consulta SELECT:
+```
+SELECT [ DISTINCT ] [ * ] / [nombre_columna] AS [expresion]
+FROM nombre_tabla 
+WHERE condiciones
+ORDER BY nombre_columna [ ASC / DESC ]
+```
