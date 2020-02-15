@@ -35,7 +35,7 @@ En una consulta, `SELECT` puede ir seguido de los siguientes elementos:
 
 ➜**Orden de ejecución** de una consulta SELECT: FROM, WHERE, GROUP BY, HAVING, SELECT.
 
-##  La cláusula WHERE
+##  La sentencia WHERE
 
 Su función es eliminar las filas que le pasa el FROM que no hacen cierta una o más condiciones. Las condiciones que filtran los datos de las tuplas(o filas) en el `WHERE` son expresiones lógicas que devuelven TRUE o FALSE (valor booleano), dependiendo de si se cumplen o no las condiciones. Para comparar los datos se utilizan los siguientes operadores:  
 - `<`
@@ -60,9 +60,11 @@ Es una expresión que se evalúa como TRUE o FALSE. Se pueden usar en `WHERE`y `
 
 - **IS [NOT] NULL**
 
-## La cláusula HAVING
+## La sentencia HAVING
 
 De igual forma que WHERE permite filtrar *filas*, `HAVING` permite filtrar **grupos**. Esta cláusula permite establecer una condición que se evalúa sobre cada grupo de filas, y aquellos grupos que cumplen la condición, pasan a la cláusula `SELECT`.
+
+## La sentencia JOIN
 
 ## El valor nulo NULL
 
@@ -76,11 +78,9 @@ Se diferencian 2 casos:
 –Porque no procede/no es aplicable.
 •Ejemplo: en una tabla de empleados, un nulo en el atributo comisión de un empleado representa que el empleado no tiene derecho a comisión y que, por tanto, no procede almacenar su valor.
 
-En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas. insertar CAPTURA NULOS Y DISTINCT 
+En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas. 
 
-
-En una consulta con un ORDER BY, por convención, los nulos se consideran mayores que cualquier valor.*insertar Captura NULOS Y ORDER BY*
-
+En una consulta con un ORDER BY, por convención, los nulos se consideran mayores que cualquier valor.
 
 
 
