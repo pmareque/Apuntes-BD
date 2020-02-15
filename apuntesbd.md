@@ -4,13 +4,14 @@ DQL es uno de los sublenguajes SQL utilizado para realizar **consultas** en base
 
 Esta es la sintaxis básica de una consulta SELECT:
 ```
-SELECT [ DISTINCT|ALL ] [ * ] / [columna1] AS [expresion], ... , [columnaN]
+SELECT [ DISTINCT|ALL ] [ * ] / [columna1] AS [expresion], ..., [columnaN]
 FROM tabla 
 WHERE <condicion_where>
-GROUP BY <columna1>[,<columna2>,...
+GROUP BY <columna1>,<columna2>, ...
 HAVING <condicion_having>
 ORDER BY <expr_orderby1> [ ASC / DESC ];
 ```
+
 `SELECT`, `FROM` y `WHERE` son las partes principales de cualquier consulta. Algo que también es importante destacar es que las sentencias SQL acaban siempre con un punto y coma ( ; ).
 
 
@@ -25,6 +26,13 @@ ORDER BY <expr_orderby1> [ ASC / DESC ];
 Tanto en el SELECT como en el FROM podemos renombrar columnas y filas con la cláusula **AS**. Es muy útil ya que hace que la consulta y su resultado sea más declarativo.
 
 ## La sentencia SELECT
+
+En una consulta, `SELECT` puede ir seguido de los siguientes elementos:
+- Un **asterisco** `*` indica que en el resultado se añadan todas las columnas de la tabla.
+> SELECT * FROM movie;
+- `DISTINCT` se incluye después de SELECT para eliminar filas repetidas, de forma que solo haya valores únicos. 
+
+➜**Orden de ejecución** de una consulta SELECT: FROM, WHERE, GROUP BY, HAVING, SELECT.
 
 ##  La cláusula WHERE
 
@@ -42,7 +50,17 @@ Esta estructura es lo que se denomina predicados, porque que permiten especifica
 
 ## El valor nulo NULL
 
+Un `NULL` representa ausencia de información. El valor 0 de un dato numérico o una cadena(char) vacía no es lo mismo que un valor NULL, por lo tanto debe diferenciarse de cualquier otro valor.
 
+Se diferencian 2 casos:
+
+-Desconocemos el dato.
+•Ejemplo: no conocemos el número de teléfono de un estudiante.
+
+–Porque no procede/no es aplicable.
+•Ejemplo: un nulo en el atributo comisión de un empleado representa que el empleado no tiene derecho a comisión y que, por tanto, no procede almacenar su valor.
+
+En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas.
 
 
 
