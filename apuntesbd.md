@@ -30,7 +30,8 @@ Tanto en el SELECT como en el FROM podemos renombrar columnas y filas con la cl�
 En una consulta, `SELECT` puede ir seguido de los siguientes elementos:
 - Un **asterisco** `*` indica que en el resultado se añadan todas las columnas de la tabla.
 > SELECT * FROM movie;
-- `DISTINCT` se incluye después de SELECT para eliminar filas repetidas, de forma que solo haya valores únicos. 
+- `DISTINCT` se incluye después de SELECT para eliminar filas repetidas, de forma que solo haya valores únicos. En el siguiente ejemplo, si no añadimos el DISTINCT el resultado tendría tantas filas como países haya y se repetirían los continentes.
+> SELECT DISTINCT continent FROM world;
 
 ➜**Orden de ejecución** de una consulta SELECT: FROM, WHERE, GROUP BY, HAVING, SELECT.
 
@@ -69,9 +70,9 @@ Se diferencian 2 casos:
 •Ejemplo: no conocemos el número de teléfono de un estudiante.
 
 –Porque no procede/no es aplicable.
-•Ejemplo: un nulo en el atributo comisión de un empleado representa que el empleado no tiene derecho a comisión y que, por tanto, no procede almacenar su valor.
+•Ejemplo: en una tabla de empleados, un nulo en el atributo comisión de un empleado representa que el empleado no tiene derecho a comisión y que, por tanto, no procede almacenar su valor.
 
-En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas. *insertar CAPTURA NULOS Y DISTINCT*
+En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas. insertar CAPTURA NULOS Y DISTINCT
 
 En una consulta con un ORDER BY, por convención, los nulos se consideran mayores que cualquier valor.*insertar Captura NULOS Y ORDER BY*
 
