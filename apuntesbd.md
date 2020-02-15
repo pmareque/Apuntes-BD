@@ -12,16 +12,16 @@ HAVING <condicion_having>
 ORDER BY <expr_orderby1> [ ASC / DESC ];
 ```
 
-`SELECT`, `FROM` y `WHERE` son las partes principales de cualquier consulta. Algo que también es importante destacar es que las sentencias SQL acaban siempre con un punto y coma ( ; ).
+`SELECT`, `FROM` y `WHERE` son las partes principales de cualquier consulta. Algo que también es importante destacar es que las sentencias SQL acaban siempre con un punto y coma ( **;** ).
 
 
-`SELECT`: filtra datos a nivel columna. 
+`SELECT`: filtra datos a nivel **columna**. 
 
-`FROM`: indica la tabla de la que se van a coger los datos.
+`FROM`: indica la **tabla** de la que se van a coger los datos.
 
-`WHERE`: filtra datos a nivel fila, devolviendo sólo las que cumplen una o más condiciones.
+`WHERE`: filtra datos a nivel **fila**, devolviendo sólo las que cumplen una o más condiciones.
 
-`ORDER BY`: define el orden ascendente(`ASC`) o descendente(`DESC`) de las filas del conjunto de resultados, separando por comas los campos por los que queremos ordenar.  Si no se indica nada el ordenamiento por defecto es ascendente (ASC), y se puede ordenar ascendentemente en unas expresiones, y descendente en otras. La columna por la que se ordenan las tuplas no tiene que aparecer necesariamente en la cláusula SELECT.
+`ORDER BY`: define el orden ascendente(`ASC`) o descendente(`DESC`) de las filas del conjunto de resultados, separando por comas los campos por los que queremos ordenar.  Si no se indica nada **el ordenamiento por defecto es ascendente (ASC)**, y se puede ordenar ascendentemente en unas expresiones, y descendente en otras. La columna por la que se ordenan las tuplas no tiene que aparecer necesariamente en la cláusula SELECT.
 
 Tanto en el SELECT como en el FROM podemos renombrar columnas y filas con la cláusula **AS**. Es muy útil ya que hace que la consulta y su resultado sea más declarativo.
 
@@ -48,6 +48,17 @@ La sintaxis a seguir es:
 
 Esta estructura es lo que se denomina predicados, porque que permiten especificar una condición.
 
+### Predicados
+Es una expresión que se evalúa como TRUE (verdadero), FALSE (falso) o UNKNOWN (desconocido). Se pueden usar en `WHERE`y `HAVING`. Existen varios predicados:
+
+- **BETWEEN**
+
+- **IN**
+
+- **LIKE**
+
+- **IS [NOT] NULL**
+
 ## El valor nulo NULL
 
 Un `NULL` representa ausencia de información. El valor 0 de un dato numérico o una cadena(char) vacía no es lo mismo que un valor NULL, por lo tanto debe diferenciarse de cualquier otro valor.
@@ -60,8 +71,9 @@ Se diferencian 2 casos:
 –Porque no procede/no es aplicable.
 •Ejemplo: un nulo en el atributo comisión de un empleado representa que el empleado no tiene derecho a comisión y que, por tanto, no procede almacenar su valor.
 
-En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas.
+En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas. *insertar CAPTURA NULOS Y DISTINCT*
 
+En una consulta con un ORDER BY, por convención, los nulos se consideran mayores que cualquier valor.*insertar Captura NULOS Y ORDER BY*
 
 
 
