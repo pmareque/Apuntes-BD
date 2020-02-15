@@ -76,7 +76,8 @@ Se diferencian 2 casos:
 –Porque no procede/no es aplicable.
 •Ejemplo: en una tabla de empleados, un nulo en el atributo comisión de un empleado representa que el empleado no tiene derecho a comisión y que, por tanto, no procede almacenar su valor.
 
-En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas. insertar CAPTURA NULOS Y DISTINCT
+En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas. insertar CAPTURA NULOS Y DISTINCT 
+
 
 En una consulta con un ORDER BY, por convención, los nulos se consideran mayores que cualquier valor.*insertar Captura NULOS Y ORDER BY*
 
