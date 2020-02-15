@@ -50,7 +50,7 @@ La sintaxis a seguir es:
 Esta estructura es lo que se denomina predicados, porque que permiten especificar una condición.
 
 ### Predicados
-Es una expresión que se evalúa como TRUE (verdadero), FALSE (falso) o UNKNOWN (desconocido). Se pueden usar en `WHERE`y `HAVING`. Existen varios predicados:
+Es una expresión que se evalúa como TRUE o FALSE. Se pueden usar en `WHERE`y `HAVING`. Existen varios predicados:
 
 - **BETWEEN**
 
@@ -59,6 +59,10 @@ Es una expresión que se evalúa como TRUE (verdadero), FALSE (falso) o UNKNOWN 
 - **LIKE**
 
 - **IS [NOT] NULL**
+
+## La cláusula HAVING
+
+De igual forma que WHERE permite filtrar *filas*, `HAVING` permite filtrar **grupos**. Esta cláusula permite establecer una condición que se evalúa sobre cada grupo de filas, y aquellos grupos que cumplen la condición, pasan a la cláusula `SELECT`.
 
 ## El valor nulo NULL
 
@@ -75,19 +79,6 @@ Se diferencian 2 casos:
 En el caso de que haya varios valores `NULL` en una consulta, `DISTINCT` también elimina las filas repetidas. insertar CAPTURA NULOS Y DISTINCT
 
 En una consulta con un ORDER BY, por convención, los nulos se consideran mayores que cualquier valor.*insertar Captura NULOS Y ORDER BY*
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
