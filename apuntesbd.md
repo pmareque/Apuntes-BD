@@ -3,7 +3,7 @@
 DQL es uno de los sublenguajes SQL utilizado para realizar **consultas** en bases de datos. El ejemplo principal de DQL es la instrucción **SELECT**, la cual nos permite **recuperar datos** almacenados en una base de datos.
 
 Esta es la sintaxis básica de una consulta SELECT:
-```
+```console
 SELECT [ DISTINCT|ALL ] [ * ] / [columna1] AS [expresion], ..., [columnaN]
 FROM tabla 
 WHERE <condicion_where>
@@ -29,7 +29,7 @@ Tanto en el SELECT como en el FROM podemos renombrar columnas y filas con la cl�
 En una consulta, `SELECT` puede ir seguido de los siguientes elementos:
 - Un **asterisco** `*` indica que en el resultado se añadan todas las columnas de la tabla. Ejemplo:
 > SELECT * FROM movie;
-- `DISTINCT` se incluye después de SELECT para eliminar filas repetidas, de forma que solo haya valores únicos. En el siguiente ejemplo, si no añadimos DISTINCT el resultado tendría tantas filas como países haya y se repetirían los continentes. Ejemplo(El resultado será una columna con siete filas, una por cada continente.):
+- `DISTINCT` se incluye después de SELECT para eliminar filas repetidas, de forma que solo haya valores únicos. En el siguiente ejemplo, si no añadimos DISTINCT el resultado tendría tantas filas como países haya y se repetirían los continentes. Ejemplo (el resultado será una columna con siete filas, una por cada continente):
 > SELECT DISTINCT continent FROM world;
 
 ➜❗ **Orden de ejecución** de una consulta SELECT: FROM, WHERE, GROUP BY, HAVING, SELECT.
@@ -107,10 +107,28 @@ FROM casting JOIN actor ON (actor.id = casting.actorid)
 En esta consulta, la columna *id* de la tabla *actor* y la columna *actorid* de la tabla *casting* son las que hacen posible la unión de las tablas. *casting.actorid* es la clave foránea que hace referencia a *actor.id*, la clave primaria de la tabla *actor*. De este modo, podremos obtener el nombre de todos los actores que actuaron en la película con el identificador(*id*) 11768.
 
 Hay 4 tipos de `JOIN`:
-- `INNER JOIN` (`JOIN`):
-- `LEFT JOIN`:
-- `RIGHT JOIN`:
-- `FULL JOIN`:
+- `INNER JOIN` (`JOIN` simple): es el tipo de JOIN más común(visto en el ejemplo anterior).
+- `LEFT JOIN`: devuelve **todas** las **filas** de la tabla de la **IZQUIERDA** especificadas en la condición ON y sólo aquellas filas de la tabla de la derecha donde los campos unidos son iguales (es decir, donde se cumple la condición).
+```
+SELECT columns
+FROM table1
+LEFT JOIN table2
+ON table1.column = table2.column;
+```
+![Diagrama visual de LEFT JOIN] (https://www.techonthenet.com/sql/images/left_outer_join.gif)
+
+- `RIGHT JOIN`: devuelve **todas** las filas de la tabla de la DERECHA especificadas en la condición ON y sólo aquellas filas de la tabla de la izquierda donde los campos unidos son iguales  (es decir, donde se cumple la condición).
+```
+SELECT columns
+FROM table1
+RIGHT JOIN table2
+ON table1.column = table2.column;
+```
+![Diagrama visual de RIGHT JOIN] (https://www.techonthenet.com/sql/images/right_outer_join.gif)
+
+- `FULL JOIN`: deuvuelve tanto las filas de la tabla 1 como las filas de la tabla 2, tanto si se cumple la condición o como si no. Se podría decir que es la suma del LEFT JOIN y RIGHT JOIN.
+
+![Diagrama visual de FULL JOIN] (https://www.techonthenet.com/sql/images/full_outer_join.gif)
 
 ## El valor nulo NULL
 
@@ -139,9 +157,23 @@ WHERE <condicion_where> IS [NOT] NULL;
 
 Un función de agregado realiza un cálculo sobre un conjunto de valores y devuelve un solo valor. Estas funciones ignoran los valores NULL excepto `COUNT`, y suelen ser usadas con `GROUP BY`.
 
+❗ Las funciones de agregado **NO se pueden usar** en la cláusula `WHERE` . Y si aparece `DISTINCT` se eliminan los valores repetidos antes de realizar la operación.
 
+Las más frecuentes son:
 
+- `SUM` (suma)
+- `COUNT` (contar)
+- `MAX` (máximo)
+- `MIN` (mínimo)
+- `AVG` (media)
+- `VAR` (varianza)
 
+La función `COUNT` tiene pequeñas diferencias:
 
-
-
+1→`` COUNT([ALL] <expression>) `` cuenta cuántos valores distintos de nulo hay en la
+columna correspondiente a <expre> en la tabla resultante.
+2→`` COUNT(DISTINCT <expression>) `` cuenta cuántos valores distintos de nulo y
+distintos entre sí hay en la columna correspondiente a <expre> en la tabla
+resultante.
+3→ `` COUNT(*) `` cuenta cuántas filas hay en la tabla resultante aún cuando las filas
+sean todo nulos.
