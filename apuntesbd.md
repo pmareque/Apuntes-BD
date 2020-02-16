@@ -1,3 +1,13 @@
+- [SQL DQL (Data Query Language)](#SQL-DQL-Data-Query-Language)
+  - [La instrucción SELECT](#la-instrucción-select)
+  - [La instrucción WHERE](#la-instrucción-where)
+    - [Predicados](#predicados)
+  - [La cláusula GROUP BY](#la-cláusula-group-by)
+  - [La cláusula HAVING](#la-cláusula-having)
+  - [La instrucción JOIN](#la-instrucción-join)
+  - [El valor nulo NULL](#el-valor-nulo-null)
+  - [Funciones de agregado](#funciones-de-agregado)
+
 # SQL DQL (Data Query Language)
 
 DQL es uno de los sublenguajes SQL utilizado para realizar **consultas** en bases de datos. El ejemplo principal de DQL es la instrucción **SELECT**, la cual nos permite **recuperar datos** almacenados en una base de datos.
