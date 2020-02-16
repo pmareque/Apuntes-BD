@@ -29,10 +29,8 @@ Tanto en el SELECT como en el FROM podemos renombrar columnas y filas con la cl�
 En una consulta, `SELECT` puede ir seguido de los siguientes elementos:
 - Un **asterisco** `*` indica que en el resultado se añadan todas las columnas de la tabla. Ejemplo:
 > SELECT * FROM movie;
-- `DISTINCT` se incluye después de SELECT para eliminar filas repetidas, de forma que solo haya valores únicos. En el siguiente ejemplo, si no añadimos DISTINCT el resultado tendría tantas filas como países haya y se repetirían los continentes. Ejemplo:
+- `DISTINCT` se incluye después de SELECT para eliminar filas repetidas, de forma que solo haya valores únicos. En el siguiente ejemplo, si no añadimos DISTINCT el resultado tendría tantas filas como países haya y se repetirían los continentes. Ejemplo(El resultado será una columna con siete filas, una por cada continente.):
 > SELECT DISTINCT continent FROM world;
-
-El resultado de la consulta es una columna con siete filas, una por cada continente.
 
 ➜❗ **Orden de ejecución** de una consulta SELECT: FROM, WHERE, GROUP BY, HAVING, SELECT.
 
@@ -82,9 +80,7 @@ WHERE name LIKE 'S%';
 ```
 ## La cláusula GROUP BY
 
-`GROUP BY` agrupa las filas que tienen los mismos valores en grupos de filas. En lugar de aplicar las funciones colectivas sobre todas las filas, éstas se pueden
-agrupar, formando más de un grupo de filas, y entonces aplicar las funciones sobre
-cada uno de esos grupos. En el resultado habrá una fila por cada uno de los grupos. Ejemplo (una fila por cada grupo continent):
+`GROUP BY` agrupa las filas que tienen los mismos valores en grupos de filas. En lugar de aplicar las funciones colectivas sobre todas las filas, éstas se pueden agrupar, formando más de un grupo de filas, y entonces aplicar las funciones sobre cada uno de esos grupos. En el resultado habrá una fila por cada uno de los grupos. Ejemplo:
 ```
 SELECT continent, COUNT(name) 
 FROM world
@@ -101,6 +97,20 @@ HAVING SUM(population) > 500000000;
 ```
 
 ## La instrucción JOIN
+
+`JOIN` se utiliza para recuperar datos de múltiples tablas en una base de datos.  La combinación básica se hace mediante dos tablas, como este ejemplo:
+```
+SELECT actor.name 
+FROM casting JOIN actor ON (actor.id = casting.actorid)
+ WHERE casting.movieid= 11768 ;
+```
+En esta consulta, la columna *id* de la tabla *actor* y la columna *actorid* de la tabla *casting* son las que hacen posible la unión de las tablas. *casting.actorid* es la clave foránea que hace referencia a *actor.id*, la clave primaria de la tabla *actor*. De este modo, podremos obtener el nombre de todos los actores que actuaron en la película con el identificador(*id*) 11768.
+
+Hay 4 tipos de `JOIN`:
+- `INNER JOIN` (`JOIN`):
+- `LEFT JOIN`:
+- `RIGHT JOIN`:
+- `FULL JOIN`:
 
 ## El valor nulo NULL
 
