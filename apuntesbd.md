@@ -182,8 +182,10 @@ La función `COUNT` tiene pequeñas diferencias:
 
 1→`` COUNT([ALL] <expression>) `` cuenta cuántos valores distintos de nulo hay en la
 columna correspondiente a <expre> en la tabla resultante.
+
 2→`` COUNT(DISTINCT <expression>) `` cuenta cuántos valores distintos de nulo y
 distintos entre sí hay en la columna correspondiente a <expre> en la tabla
 resultante.
+
 3→ `` COUNT(*) `` cuenta cuántas filas hay en la tabla resultante aún cuando las filas
 sean todo nulos.
