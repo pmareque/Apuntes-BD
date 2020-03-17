@@ -18,13 +18,13 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
   - REAL
 
 -**Texto**:
-  - STRING
   - CHAR (longitud fija, de 0 a 255 caracteres)
   - VARCHAR (longitud variable, de 0 a 65535 caracteres)
+  - STRING
 
 -**Booleanos**:
-  - TRUE
-  - FALSE
+  - TRUE	(valor lógico 1)
+  - FALSE	(valor lógico 0)
   - NULL
   
 -**Fechas**:
@@ -54,7 +54,7 @@ CREATE TABLE <nombre-de-tabla> (
 ```
 *explicar: restriccion=CONSTRAINT- clave primaria, unicidad, comprobación. 
 
-*explicar: PRIMARY KEY, FOREIGN KEY, NOT NULL, DEFAULT(x)*
+*explicar: PRIMARY KEY, FOREIGN KEY, NOT NULL(asegura que los valores almacenados en una columna no son NULOS.), DEFAULT(x)*
 
 *ejemplos* 
 
@@ -88,6 +88,6 @@ ALTER TABLE <nombre-de-la-tabla>
     ADD [CONSTRAINT <restriccion>] ...
     DROP [CONSTRAINT <restriccion>] ...;
 ```
-/*Explicar CONSTRAINT, CASCADE, RESTRICT*/
+/*Explicar CONSTRAINT, CASCADE, RESTRICT, NOT NULL(asegura que los valores almacenados en una columna no son NULOS.)*/
 
 /*ejemplos*/
