@@ -45,12 +45,16 @@ CREATE TABLE <nombre-de-tabla> (
 	<atributo1> <dominio1> [NOT NULL] [DEFAULT(x)] ,   
         ...
 	<atributoN> <dominioN> [NOT NULL] [DEFAULT(x)],
-	[restricion1],
+	[restriccion1],
 	...
-	[restricionN]
+	[restriccionN]
 );
 ```
+*explicar: restriccion=constraint- clave primaria, unicidad, comprobación. Tb que es default(x)*
 
+*ejemplos* 
+
+*emojis útiles ✔️ ✅*
 ## La sentencia DROP
 
 Sintaxis:
