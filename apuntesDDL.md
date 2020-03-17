@@ -52,7 +52,9 @@ CREATE TABLE <nombre-de-tabla> (
 	[restriccionN]
 );
 ```
-*explicar: restriccion=constraint- clave primaria, unicidad, comprobación. Tb que es default(x)*
+*explicar: restriccion=CONSTRAINT- clave primaria, unicidad, comprobación. 
+
+*explicar: PRIMARY KEY, FOREIGN KEY, NOT NULL, DEFAULT(x)*
 
 *ejemplos* 
 
@@ -86,5 +88,6 @@ ALTER TABLE <nombre-de-la-tabla>
     ADD [CONSTRAINT <restriccion>] ...
     DROP [CONSTRAINT <restriccion>] ...;
 ```
+/*Explicar CONSTRAINT, CASCADE, RESTRICT*/
 
 /*ejemplos*/
