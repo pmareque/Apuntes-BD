@@ -19,8 +19,8 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
 
 -**Texto**:
   - STRING
-  - CHAR
-  - VARCHAR
+  - CHAR (longitud fija, de 0 a 255 caracteres)
+  - VARCHAR (longitud variable, de 0 a 65535 caracteres)
 
 -**Booleanos**:
   - TRUE
@@ -28,14 +28,16 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
   - NULL
   
 -**Fechas**:
-  - DATE
+  - DATE (DD-MM-YYYY)
+  - TIME (H, MIN, zona horaria)
+  - TIMESTAMP (DATE+TIME)
 
 -**Otros**:
-  - CIDR
-  - MONEY
-  - UUNID
-  - JSON
-  - XML
+  - CIDR (Classless Inter-Domain Routing, identificar direcciones IP con el formato x.x.x.x/x Ej 192.168.0.1/24)
+  - MONEY (identificar cantidades monetarias)
+  - UUID (Universally Unique IDentifier)
+  - JSON (JavaScript Object Notation)
+  - XML (permite almacenar fragmentos y documentos XML en una base de datos)
 
 ## La sentencia CREATE
 
@@ -63,7 +65,9 @@ DROP TABLE
     [IF EXISTS] <nombre-de-la-tabla>
     [CASCADE | RESTRICT];   
 ```
-/*CASCADE -> elimina los hijos. RESTRICT -> para en esta tabla*/ /*todo lo que va entre [] es un dato opcional*/
+/*explicar >> CASCADE -> elimina los hijos. RESTRICT -> para en esta tabla*/ /*todo lo que va entre [] es un dato opcional*/
+
+/*ejemplos*/
 
 ```console
 DROP SCHEMA
@@ -82,3 +86,5 @@ ALTER TABLE <nombre-de-la-tabla>
     ADD [CONSTRAINT <restriccion>] ...
     DROP [CONSTRAINT <restriccion>] ...;
 ```
+
+/*ejemplos*/
