@@ -18,14 +18,14 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
   - REAL
 
 -**Texto**:
-  - CHAR (longitud fija, de 0 a 255 caracteres)
-  - VARCHAR (longitud variable, de 0 a 65535 caracteres)
+  - CHAR 	(longitud fija, de 0 a 255 caracteres)
+  - VARCHAR 	(longitud variable, de 0 a 65535 caracteres)
   - STRING
 
 -**Booleanos**:
   - TRUE	(valor lógico 1)
   - FALSE	(valor lógico 0)
-  - NULL
+  - NULL	(valor nulo)
   
 -**Fechas**:
   - DATE (DD-MM-YYYY)
@@ -37,7 +37,7 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
   - MONEY (identificar cantidades monetarias)
   - UUID (Universally Unique IDentifier)
   - JSON (JavaScript Object Notation)
-  - XML (permite almacenar fragmentos y documentos XML en una base de datos)
+  - XML (almacenar fragmentos y documentos XML en una base de datos)
 
 ## La sentencia CREATE
 
@@ -52,11 +52,15 @@ CREATE TABLE <nombre-de-tabla> (
 	[restriccionN]
 );
 ```
-*explicar: restriccion=CONSTRAINT- clave primaria, unicidad, comprobación. 
+*explicar: - clave primaria(evitar insertar valores nulos en determinados atributos de la tabla), unicidad(evitar duplicidad errónea de filas), comprobación. 
+CONSTRAINT= Puede colocar restricciones para limitar el tipo de dato que puede ingresarse en una tabla. Dichas restricciones pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción CREATE TABLE, o luego de crear la tabla a través de la instrucción ALTER TABLE.
 
-*explicar: PRIMARY KEY, FOREIGN KEY, NOT NULL(asegura que los valores almacenados en una columna no son NULOS.), DEFAULT(x)*
+*explicar: 
+ PRIMARY KEY indica el/los atributo/s que forma/n la clave primaria.
+ FOREIGN KEY indica los atributos que forma/n la clave foránea.
+ NOT NULL(asegura que los valores almacenados en una columna no son NULOS.), DEFAULT(x)*
 
-*ejemplos* 
+*ejemplos con CREATE TABLE* 
 
 *emojis útiles ✔️ ✅*
 ## La sentencia DROP
@@ -88,6 +92,6 @@ ALTER TABLE <nombre-de-la-tabla>
     ADD [CONSTRAINT <restriccion>] ...
     DROP [CONSTRAINT <restriccion>] ...;
 ```
-/*Explicar CONSTRAINT, CASCADE, RESTRICT, NOT NULL(asegura que los valores almacenados en una columna no son NULOS.)*/
+/*Explicar CASCADE, RESTRICT, NOT NULL(asegura que los valores almacenados en una columna no son NULOS.)*/
 
 /*ejemplos*/
