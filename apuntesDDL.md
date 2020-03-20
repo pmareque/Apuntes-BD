@@ -41,7 +41,7 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
 
 ## La sentencia CREATE
 
-Sintaxis: 
+Sintaxis ✔️: 
 ```console
 CREATE TABLE <nombre-de-tabla> (
 	<atributo1> <dominio1> [NOT NULL] [DEFAULT(x)] ,   
@@ -52,20 +52,20 @@ CREATE TABLE <nombre-de-tabla> (
 	[restriccionN]
 );
 ```
-*explicar: - clave primaria(evitar insertar valores nulos en determinados atributos de la tabla), unicidad(evitar duplicidad errónea de filas), comprobación. 
-CONSTRAINT= Puede colocar restricciones para limitar el tipo de dato que puede ingresarse en una tabla. Dichas restricciones pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción CREATE TABLE, o luego de crear la tabla a través de la instrucción ALTER TABLE.
+/*explicar:  
+CONSTRAINT= Puede colocar restricciones para limitar el tipo de dato que puede ingresarse en una tabla. Dichas restricciones pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción CREATE TABLE, o luego de crear la tabla a través de la instrucción ALTER TABLE-> clave primaria(evitar insertar valores nulos en determinados atributos de la tabla), unicidad(evitar duplicidad errónea de filas), comprobación(CHECK).*/
 
 *explicar: 
  PRIMARY KEY indica el/los atributo/s que forma/n la clave primaria.
  FOREIGN KEY indica los atributos que forma/n la clave foránea.
- NOT NULL(asegura que los valores almacenados en una columna no son NULOS.), DEFAULT(x)*
+ NOT NULL(asegura que los valores almacenados en una columna no son NULOS.), DEFAULT(x)*/
 
-*ejemplos con CREATE TABLE* 
+/*ejemplos con CREATE TABLE*/
 
-*emojis útiles ✔️ ✅*
+/*Caso CREATE DOMAIN = útil para crear un nuevo tipo de dato*/
 ## La sentencia DROP
 
-Sintaxis:
+Sintaxis ✔️:
 ```console
 DROP TABLE                                     
     [IF EXISTS] <nombre-de-la-tabla>
@@ -73,7 +73,7 @@ DROP TABLE
 ```
 /*explicar >> CASCADE -> elimina los hijos. RESTRICT -> para en esta tabla*/ /*todo lo que va entre [] es un dato opcional*/
 
-/*ejemplos*/
+/*ejemplos con DROP TABLE*/
 
 ```console
 DROP SCHEMA
@@ -84,7 +84,7 @@ DROP SCHEMA
 
 ## La sentencia ALTER
 
-Sintaxis: 
+Sintaxis ✔️: 
 ```console
 ALTER TABLE <nombre-de-la-tabla>
     ADD [COLUMN] <atributo1> <dominio1> [NOT NULL] [DEFAULT(x)]
@@ -94,4 +94,6 @@ ALTER TABLE <nombre-de-la-tabla>
 ```
 /*Explicar CASCADE, RESTRICT, NOT NULL(asegura que los valores almacenados en una columna no son NULOS.)*/
 
-/*ejemplos*/
+/*ejemplos con ALTER TABLE*/
+
+/*emojis útiles ✔️ ✅*/
