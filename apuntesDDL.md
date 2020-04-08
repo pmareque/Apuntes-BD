@@ -42,7 +42,7 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
 
 ## La sentencia CREATE
 
-**CREATE** sirve para crear bases de datos enteras o tablas.
+`CREATE` sirve para crear bases de datos enteras o tablas.
 
 ✔️Sintaxis: 
 ```console
@@ -57,10 +57,15 @@ CREATE TABLE <nombre-tabla> (
 	[restrictionN]
 );
 ``` 
+**Ejemplos con CREATE TABLE:**
+```SQL
+CREATE TABLE "alumno"
+	("numeroLista" INTEGER PRIMARY KEY,
+	"nombre" CHAR(20),
+	"apellidos" CHAR(40),
+	"tlf" INTEGER);
+```
 
-/*ejemplos con CREATE TABLE*/
-
-/*Caso CREATE DOMAIN = útil para crear un nuevo tipo de dato*/
 ## La sentencia DROP
 
 ✔️Sintaxis:
@@ -71,7 +76,7 @@ DROP TABLE
 ```
 /*explicar >> CASCADE -> elimina los hijos. RESTRICT -> para en esta tabla*/ /*todo lo que va entre [] es un dato opcional*/
 
-/*ejemplos con DROP TABLE*/
+**Ejemplos con DROP TABLE:**
 
 ```console
 DROP SCHEMA
@@ -82,6 +87,8 @@ DROP SCHEMA
 
 ## La sentencia ALTER
 
+`ALTER` se utiliza tanto para modificar columnas como para eliminarlas. Los comandos que permiten estas funciones son **ADD** y **DROP**.
+
 ✔️Sintaxis: 
 ```console
 ALTER TABLE <nombre-de-la-tabla>
@@ -90,9 +97,8 @@ ALTER TABLE <nombre-de-la-tabla>
     ADD [CONSTRAINT <restriccion>] ...
     DROP [CONSTRAINT <restriccion>] ...;
 ```
-/*Explicar CASCADE, RESTRICT, NOT NULL(asegura que los valores almacenados en una columna no son NULOS.)*/
 
-/*ejemplos con ALTER TABLE*/
+**Ejemplos con ALTER TABLE:**
 
 /*emojis útiles ✔️ */
 
@@ -100,9 +106,10 @@ ALTER TABLE <nombre-de-la-tabla>
 
 Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que puede ingresarse en una tabla. Pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción CREATE TABLE, o luego de crear la tabla mediante la instrucción ALTER TABLE. Existen varios tipos:
 
-- **PRIMARY KEY: indica el/los atributo/s que forma/n la clave primaria.
-- FOREIGN KEY: indica los atributos que forma/n la clave foránea.
-- UNIQUE: evita duplicidad errónea de filas.
-- NULL: asegura que los valores almacenados en una columna no son NULOS.
-- CHECK
+- `PRIMARY KEY`: indica el/los atributo/s que forma/n la clave primaria.
+- `FOREIGN KEY`: indica los atributos que forma/n la clave foránea.
+- `UNIQUE`: evita duplicidad errónea de filas.
+- `NULL`: asegura que los valores almacenados en una columna no son NULOS.
+- `CHECK`
+- /*Explicar CASCADE, RESTRICT*/
 
