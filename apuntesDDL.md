@@ -120,6 +120,6 @@ Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que pue
 - `NULL`: asegura que los valores almacenados en una columna no son NULOS.
 - `CHECK` <<<<<<<<<<<<
 
-**Ejemplo usando CONSTRAINTS en una sentencia ALTER TABLE:** <<<<<<<<<<<<
+**Ejemplo usando constraints en una sentencia ALTER TABLE:** <<<<<<<<<<<<
 
 
