@@ -2,7 +2,7 @@
   - [La sentencia CREATE](#la-sentencia-create)
   - [La sentencia DROP](#la-sentencia-drop)
   - [La sentencia ALTER](#la-sentencia-alter)
-  - [CONSTRAINT: restricciones en SQL](#CONSTRAINT:-restricciones-en-SQL)
+  - [CONSTRAINT o restricciones en SQL](#CONSTRAINT-o-restricciones-en-SQL)
   
 # SQL DDL (Data Definition Language)
 
@@ -44,8 +44,10 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
 
 **CREATE** sirve para crear bases de datos enteras o tablas.
 
-Sintaxis ✔️: 
+✔️Sintaxis: 
 ```console
+CREATE DATABASE <nombre-BD>;
+
 CREATE TABLE <nombre-tabla> (
 	<atributo1> <dominio1> [NOT NULL] [DEFAULT(x)] ,   
         ...
@@ -56,17 +58,12 @@ CREATE TABLE <nombre-tabla> (
 );
 ``` 
 
-*explicar: 
- PRIMARY KEY indica el/los atributo/s que forma/n la clave primaria.
- FOREIGN KEY indica los atributos que forma/n la clave foránea.
- NOT NULL(asegura que los valores almacenados en una columna no son NULOS.)*/
-
 /*ejemplos con CREATE TABLE*/
 
 /*Caso CREATE DOMAIN = útil para crear un nuevo tipo de dato*/
 ## La sentencia DROP
 
-Sintaxis ✔️:
+✔️Sintaxis:
 ```console
 DROP TABLE                                     
     [IF EXISTS] <nombre-de-la-tabla>
@@ -85,7 +82,7 @@ DROP SCHEMA
 
 ## La sentencia ALTER
 
-Sintaxis ✔️: 
+✔️Sintaxis: 
 ```console
 ALTER TABLE <nombre-de-la-tabla>
     ADD [COLUMN] <atributo1> <dominio1> [NOT NULL] [DEFAULT(x)]
@@ -97,14 +94,15 @@ ALTER TABLE <nombre-de-la-tabla>
 
 /*ejemplos con ALTER TABLE*/
 
-/*emojis útiles ✔️ ✅*/
+/*emojis útiles ✔️ */
 
-## CONSTRAINT: restricciones en SQL
+## CONSTRAINT o restricciones en SQL
 
 Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que puede ingresarse en una tabla. Pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción CREATE TABLE, o luego de crear la tabla mediante la instrucción ALTER TABLE. Existen varios tipos:
 
--PRIMARY KEY (evitar insertar valores nulos en atributos de la tabla) y para cumplir la unicidad en una tabla (evitar duplicidad errónea de filas).
-- FOREIGN KEY
--UNIQUE
-- NULL
--CHECK
+- **PRIMARY KEY: indica el/los atributo/s que forma/n la clave primaria.
+- FOREIGN KEY: indica los atributos que forma/n la clave foránea.
+- UNIQUE: evita duplicidad errónea de filas.
+- NULL: asegura que los valores almacenados en una columna no son NULOS.
+- CHECK
+
