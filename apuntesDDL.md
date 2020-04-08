@@ -86,7 +86,7 @@ DROP SCHEMA
     [IF EXISTS] <nombre-de-la-bd>
     [ CASCADE | RESTRICT ];                 
  ```
-**Ejemplo con DROP TABLE:** <<<<<<<<<<<<
+**Ejemplo con DROP TABLE:** 
 
 ```SQL
 DROP TABLE alumnos;
