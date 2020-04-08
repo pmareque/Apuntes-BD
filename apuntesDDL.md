@@ -125,8 +125,8 @@ Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que pue
 - `PRIMARY KEY`: indica el/los atributo/s que forma/n la clave primaria.
 - `FOREIGN KEY`: indica los atributos que forman la clave foránea. Para indicar la tabla de la que depende debemos usar **REFERENCES**.
 	- **CASCADE**: elimina los "hijos" de una tabla, es decir, borra los campos de la tabla dependiente cuando se borra el campo de 	la tabla principal.
-	- **ON DELETE**: <<<<<<<<<<<<
-	- **ON UPDATE**: <<<<<<<<<<<<
+	- **ON DELETE**: especifica cómo debe actuar el SGBD frente a eliminaciones de las tablas referenciadas en la restricción.
+	- **ON UPDATE**: especifica cómo debe actuar el SGBD frente a modificaciones de las tablas referenciadas en la restricción.
 	- **SET DEFAULT**: los datos tendrán un valor por defecto si los originales se han eliminado/modificado.
 	- **SET NULL**: especifica los datos modificados como NULL.
 - `UNIQUE`: evita duplicidad errónea de filas.
