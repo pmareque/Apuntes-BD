@@ -2,6 +2,7 @@
   - [La sentencia CREATE](#la-sentencia-create)
   - [La sentencia DROP](#la-sentencia-drop)
   - [La sentencia ALTER](#la-sentencia-alter)
+  - [CONSTRAINT: restricciones en SQL](#CONSTRAINT:-restricciones-en-SQL)
   
 # SQL DDL (Data Definition Language)
 
@@ -41,24 +42,24 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
 
 ## La sentencia CREATE
 
+**CREATE** sirve para crear bases de datos enteras o tablas.
+
 Sintaxis ✔️: 
 ```console
-CREATE TABLE <nombre-de-tabla> (
+CREATE TABLE <nombre-tabla> (
 	<atributo1> <dominio1> [NOT NULL] [DEFAULT(x)] ,   
         ...
 	<atributoN> <dominioN> [NOT NULL] [DEFAULT(x)],
-	[restriccion1],
+	[restriction1],
 	...
-	[restriccionN]
+	[restrictionN]
 );
-```
-/*explicar:  
-CONSTRAINT= Puede colocar restricciones para limitar el tipo de dato que puede ingresarse en una tabla. Dichas restricciones pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción CREATE TABLE, o luego de crear la tabla a través de la instrucción ALTER TABLE-> clave primaria(evitar insertar valores nulos en determinados atributos de la tabla), unicidad(evitar duplicidad errónea de filas), comprobación(CHECK).*/
+``` 
 
 *explicar: 
  PRIMARY KEY indica el/los atributo/s que forma/n la clave primaria.
  FOREIGN KEY indica los atributos que forma/n la clave foránea.
- NOT NULL(asegura que los valores almacenados en una columna no son NULOS.), DEFAULT(x)*/
+ NOT NULL(asegura que los valores almacenados en una columna no son NULOS.)*/
 
 /*ejemplos con CREATE TABLE*/
 
@@ -97,3 +98,13 @@ ALTER TABLE <nombre-de-la-tabla>
 /*ejemplos con ALTER TABLE*/
 
 /*emojis útiles ✔️ ✅*/
+
+## CONSTRAINT: restricciones en SQL
+
+Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que puede ingresarse en una tabla. Pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción CREATE TABLE, o luego de crear la tabla mediante la instrucción ALTER TABLE. Existen varios tipos:
+
+-PRIMARY KEY (evitar insertar valores nulos en atributos de la tabla) y para cumplir la unicidad en una tabla (evitar duplicidad errónea de filas).
+- FOREIGN KEY
+-UNIQUE
+- NULL
+-CHECK
