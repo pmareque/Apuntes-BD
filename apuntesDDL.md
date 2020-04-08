@@ -110,7 +110,7 @@ ALTER TABLE <nombre-de-la-tabla>
 Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que puede ingresarse en una tabla. Pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción `CREATE TABLE`, o después de crear la tabla mediante la instrucción `ALTER TABLE`. Existen varios tipos:
 
 - `PRIMARY KEY`: indica el/los atributo/s que forma/n la clave primaria.
-- `FOREIGN KEY`: indica los atributos que forma/n la clave foránea. Para indicar la tabla de la que depende debemos usar **REFERENCES**.
+- `FOREIGN KEY`: indica los atributos que forman la clave foránea. Para indicar la tabla de la que depende debemos usar **REFERENCES**.
 	- **CASCADE**: elimina los "hijos" de una tabla, es decir, borra los campos de la tabla dependiente cuando se borra el campo de 	la tabla principal.
 	- **ON DELETE**: <<<<<<<<<<<<
 	- **ON UPDATE**: <<<<<<<<<<<<
