@@ -57,14 +57,16 @@ CREATE TABLE <nombre-tabla> (
 	[restrictionN]
 );
 ``` 
-**Ejemplos con CREATE TABLE:** <<<<<<<<<<<<<<<<<<<<<<<<
+**Ejemplo con CREATE:** 
 ```SQL
-CREATE TABLE Alumnos(
-	numeroLista INTEGER PRIMARY KEY,
-	nombre CHAR(20),
-	apellidos CHAR(40),
-	tlf INTEGER,
-	notaMedia DECIMAL
+CREATE DATABASE instituto;
+CREATE TABLE alumnos(
+	DNI 	     CHAR(9)   PRIMARY KEY,
+	nombre       CHAR(20)  NOT NULL,
+	apellidos    CHAR(40)  NOT NULL,
+	fecha_nac    DATE      NOT NULL,
+	tlf          INTEGER,
+	notaMedia    DECIMAL    NOT NULL
 );
 ```
 
@@ -84,14 +86,19 @@ DROP SCHEMA
     [IF EXISTS] <nombre-de-la-bd>
     [ CASCADE | RESTRICT ];                 
  ```
-**Ejemplos con DROP TABLE:** <<<<<<<<<<<<
+**Ejemplo con DROP TABLE:** <<<<<<<<<<<<
+
+```SQL
+DROP TABLE alumnos;
+DROP SCHEMA instituto;
+```
 
 ## La sentencia ALTER
 
 `ALTER` se utiliza tanto para modificar columnas como para eliminarlas. Los comandos que permiten estas funciones son **ADD** y **DROP**.
 
--`ADD` <<<<<<<<<<<<
--`DROP` <<<<<<<<<<<<
+-`ADD` puede añadir nuevos atributos o también nuevas restricciones a la tabla.
+-`DROP` puede eliminar atributos o restricciones de la tabla.
 
 ✔️Sintaxis: 
 ```console
@@ -102,7 +109,13 @@ ALTER TABLE <nombre-de-la-tabla>
     DROP [CONSTRAINT <restriccion>] ...;
 ```
 
-**Ejemplos con ALTER TABLE:** <<<<<<<<<<<<
+**Ejemplo con ALTER TABLE:** 
+```SQL
+ALTER TABLE instituto
+	DROP tlf,
+	ADD  curso CHAR(5) NOT NULL
+;
+```
 
 
 ## CONSTRAINT o restricciones en SQL
@@ -118,8 +131,30 @@ Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que pue
 	- **SET NULL**: especifica los datos modificados como NULL.
 - `UNIQUE`: evita duplicidad errónea de filas.
 - `NULL`: asegura que los valores almacenados en una columna no son NULOS.
-- `CHECK` <<<<<<<<<<<<
+- `CHECK`: comprueba si se cumple una condición específica entre atributos.
 
-**Ejemplo usando constraints en una sentencia ALTER TABLE:** <<<<<<<<<<<<
+**Ejemplo usando constraints en una sentencia ALTER TABLE:**
+```SQL
+CREATE TABLE participa (
+    DNI                 CHAR(9),
+    codigo_proxecto     INTEGER,
+    data_inicio         DATE        NOT NULL,
+    data_cese           DATE,
+    dedicacion          INTEGER     NOT NULL,
+    PRIMARY KEY(DNI, codigo_proxecto),
+    CONSTRAINT Check_Dates
+        CHECK (data_inicio < data_cese),
+    CONSTRAINT FK_participa_profesor
+        FOREIGN KEY(DNI)
+        REFERENCES profesor(DNI)
+        ON DELETE NO ACTION 
+        ON UPDATE CASCADE,
+    CONSTRAINT FK_proxecto_participa    
+        FOREIGN KEY (codigo_proxecto)
+        REFERENCES proxecto(codigo_proxecto)
+        ON DELETE NO ACTION 
+        ON UPDATE CASCADE
+);
+```
 
 
