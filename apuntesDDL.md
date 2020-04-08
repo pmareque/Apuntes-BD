@@ -5,7 +5,7 @@
   
 # SQL DDL (Data Definition Language)
 
-DQL es uno de los sublenguajes SQL utilizado para llevar a cabo las tareas de **definición** de las **estructuras** que almacenarán los datos, actuando así sobre los objetos de la base de datos.
+DQL es la parte del lenguaje SQL que actúa sobre los **objetos** de la base de datos.
 
 ### ❕❕
 
@@ -18,14 +18,14 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
   - REAL
 
 -**Texto**:
-  - CHAR 	(longitud fija, de 0 a 255 caracteres)
-  - VARCHAR 	(longitud variable, de 0 a 65535 caracteres)
+  - CHAR 	
+  - VARCHAR 	
   - STRING
 
 -**Booleanos**:
-  - TRUE	(valor lógico 1)
-  - FALSE	(valor lógico 0)
-  - NULL	(valor nulo)
+  - TRUE	
+  - FALSE	
+  - NULL
   
 -**Fechas**:
   - DATE (DD-MM-YYYY)
@@ -77,7 +77,7 @@ DROP TABLE
 
 ```console
 DROP SCHEMA
-    [IF EXISTS] <nombre-de-la-base-de-datos>
+    [IF EXISTS] <nombre-de-la-bd>
     [ CASCADE | RESTRICT ];                 
  ```
 /*CASCADE->borra aunque esté llena. RESTRICT-> protege si la BD no está vacía*/
