@@ -6,7 +6,7 @@
   
 # SQL DDL (Data Definition Language)
 
-DQL es la parte del lenguaje SQL que actúa sobre los **objetos** de la base de datos.
+**DQL** es el sublenguaje SQL que actúa sobre los **objetos** de la base de datos.
 
 ### ❕❕
 
@@ -120,6 +120,6 @@ Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que pue
 - `NULL`: asegura que los valores almacenados en una columna no son NULOS.
 - `CHECK` <<<<<<<<<<<<
 
-**Ejemplo usando CONSTRAINTS en una sentencia ALTER TABLE:**
+**Ejemplo usando CONSTRAINTS en una sentencia ALTER TABLE:** <<<<<<<<<<<<
 
 
