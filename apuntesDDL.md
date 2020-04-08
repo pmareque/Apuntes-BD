@@ -42,7 +42,7 @@ A pesar de que existen mucho más tipos de datos SQL, en estos apuntes se limita
 
 ## La sentencia CREATE
 
-`CREATE` sirve para crear bases de datos enteras o tablas.
+`CREATE` sirve para crear bases de datos enteras o tablas concretas de una base de datos.
 
 ✔️Sintaxis: 
 ```console
@@ -57,16 +57,20 @@ CREATE TABLE <nombre-tabla> (
 	[restrictionN]
 );
 ``` 
-**Ejemplos con CREATE TABLE:**
+**Ejemplos con CREATE TABLE:** <<<<<<<<<<<<<<<<<<<<<<<<
 ```SQL
-CREATE TABLE "alumno"
-	("numeroLista" INTEGER PRIMARY KEY,
-	"nombre" CHAR(20),
-	"apellidos" CHAR(40),
-	"tlf" INTEGER);
+CREATE TABLE Alumnos(
+	numeroLista INTEGER PRIMARY KEY,
+	nombre CHAR(20),
+	apellidos CHAR(40),
+	tlf INTEGER,
+	notaMedia DECIMAL
+);
 ```
 
 ## La sentencia DROP
+
+`DROP` es una sentencia que no sirve sólo para eliminar datos y restricciones de una tabla (o base de datos), sino que también elimina la estructura de dicha tabla. Podríamos decir que no posee ningún tipo de vuelta atrás.
 
 ✔️Sintaxis:
 ```console
@@ -74,20 +78,20 @@ DROP TABLE
     [IF EXISTS] <nombre-de-la-tabla>
     [CASCADE | RESTRICT];   
 ```
-/*explicar >> CASCADE -> elimina los hijos. RESTRICT -> para en esta tabla*/ /*todo lo que va entre [] es un dato opcional*/
-
-**Ejemplos con DROP TABLE:**
 
 ```console
 DROP SCHEMA
     [IF EXISTS] <nombre-de-la-bd>
     [ CASCADE | RESTRICT ];                 
  ```
-/*CASCADE->borra aunque esté llena. RESTRICT-> protege si la BD no está vacía*/
+**Ejemplos con DROP TABLE:** <<<<<<<<<<<<
 
 ## La sentencia ALTER
 
 `ALTER` se utiliza tanto para modificar columnas como para eliminarlas. Los comandos que permiten estas funciones son **ADD** y **DROP**.
+
+-`ADD` <<<<<<<<<<<<
+-`DROP` <<<<<<<<<<<<
 
 ✔️Sintaxis: 
 ```console
@@ -98,18 +102,24 @@ ALTER TABLE <nombre-de-la-tabla>
     DROP [CONSTRAINT <restriccion>] ...;
 ```
 
-**Ejemplos con ALTER TABLE:**
+**Ejemplos con ALTER TABLE:** <<<<<<<<<<<<
 
-/*emojis útiles ✔️ */
 
 ## CONSTRAINT o restricciones en SQL
 
-Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que puede ingresarse en una tabla. Pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción CREATE TABLE, o luego de crear la tabla mediante la instrucción ALTER TABLE. Existen varios tipos:
+Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que puede ingresarse en una tabla. Pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción `CREATE TABLE`, o después de crear la tabla mediante la instrucción `ALTER TABLE`. Existen varios tipos:
 
 - `PRIMARY KEY`: indica el/los atributo/s que forma/n la clave primaria.
-- `FOREIGN KEY`: indica los atributos que forma/n la clave foránea.
+- `FOREIGN KEY`: indica los atributos que forma/n la clave foránea. Para indicar la tabla de la que depende debemos usar **REFERENCES**.
+	- **CASCADE**: elimina los "hijos" de una tabla, es decir, borra los campos de la tabla dependiente cuando se borra el campo de 	la tabla principal.
+	- **ON DELETE**: <<<<<<<<<<<<
+	- **ON UPDATE**: <<<<<<<<<<<<
+	- **SET DEFAULT**: los datos tendrán un valor por defecto si los originales se han eliminado/modificado.
+	- **SET NULL**: especifica los datos modificados como NULL.
 - `UNIQUE`: evita duplicidad errónea de filas.
 - `NULL`: asegura que los valores almacenados en una columna no son NULOS.
-- `CHECK`
-- /*Explicar CASCADE, RESTRICT*/
+- `CHECK` <<<<<<<<<<<<
+
+**Ejemplo usando CONSTRAINTS en una sentencia ALTER TABLE:**
+
 
