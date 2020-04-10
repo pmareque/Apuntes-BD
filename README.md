@@ -1,2 +1,2 @@
-# BD - SQL
-Apuntes sobre SQL
+# Apuntes sobre SQL
+
