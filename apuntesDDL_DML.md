@@ -1,12 +1,13 @@
-- [SQL DDL (Data Definition Language)](#SQL-DQL-Data-Definition-Language)
+- [SQL DDL (Data Definition Language)](#SQL-DDL-Data-Definition-Language)
   - [La sentencia CREATE](#la-sentencia-create)
   - [La sentencia DROP](#la-sentencia-drop)
   - [La sentencia ALTER](#la-sentencia-alter)
   - [CONSTRAINT o restricciones en SQL](#CONSTRAINT-o-restricciones-en-SQL)
+- [SQL DML (Data Manipulation Language)](#SQL-DML-Data-Manipulation-Language)
   
 # SQL DDL (Data Definition Language)
 
-**DQL** es el sublenguaje SQL que actúa sobre los **objetos** de la base de datos.
+**DDL** es el sublenguaje SQL que actúa sobre los **objetos** de la base de datos, sobre su **estructura**.
 
 ### ❕❕
 
@@ -118,7 +119,7 @@ ALTER TABLE instituto
 
 ## CONSTRAINT o restricciones en SQL
 
-Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que puede ingresarse en una tabla. Pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción `CREATE TABLE`, o después de crear la tabla mediante la instrucción `ALTER TABLE`. Existen varios tipos:
+Los **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que puede ingresarse en una tabla. Pueden especificarse cuando la tabla se crea por primera vez a través de la instrucción `CREATE TABLE`, o después de crear la tabla mediante la instrucción `ALTER TABLE`. Existen varios tipos:
 
 - `PRIMARY KEY`: indica el/los atributo/s que forma/n la clave primaria.
 - `FOREIGN KEY`: indica los atributos que forman la clave foránea. Para indicar la tabla de la que depende debemos usar **REFERENCES**.
@@ -161,3 +162,55 @@ ALTER TABLE instituto
 ```
 
 
+# SQL DML (Data Manipulation Language)
+
+**DML** es el sublenguaje SQL que actúa sobre los **datos** de la base de datos. Como su nombre indica, este lenguaje se usa para manipular datos, lo que permite al usuario introducir(`INSERT`), modificar(`UPDATE`) o eliminar(`DELETE`) todo tipo de datos.
+
+## INSERT
+
+`INSERT` permite insertar valores en formato fila en una tabla. Su sintaxis básica es la siguiente:
+```SQL
+INSERT INTO table_name (list_of_columns)
+VALUES (list_of_values);
+```
+Una sintaxis más visual para entender cómo funciona INSERT podría ser:
+```SQL
+INSERT INTO <table_name> (
+	column1, 
+	column2, 
+	..., 
+	columnN
+)
+VALUES (
+value1,
+value2,
+...
+valueN);
+```
+## UPDATE
+
+`UPDATE` permite modificar los valores de uno o más registros de una tabla. Su sintaxis es la siguiente (la condición WHERE es opcional):
+
+```SQL
+UPDATE <table_name>
+SET 
+    column_name = value [, column_name = value]...
+[ WHERE condition ];
+```
+
+Una sintaxis más visual para entender cómo funciona UPDATE podría ser:
+```SQL
+UPDATE <table_name>
+SET
+   column1_name = value1,
+   column2_name = value2,
+   ...
+   columnN_name = valueN;
+```
+
+## DELETE
+
+`DELETE` permite eliminar filas de una tabla. Su sintaxis es la siguiente(la condición WHERE es opcional):
+```SQL
+DELETE FROM table_name [ WHERE condition ];
+```
