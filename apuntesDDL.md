@@ -113,8 +113,7 @@ ALTER TABLE <nombre-de-la-tabla>
 ```SQL
 ALTER TABLE instituto
 	DROP tlf,
-	ADD  curso CHAR(5) NOT NULL
-;
+	ADD  curso CHAR(5) NOT NULL;
 ```
 
 
@@ -133,7 +132,7 @@ Las **CONSTRAINT** son restricciones usadas para limitar el tipo de dato que pue
 - `NULL`: asegura que los valores almacenados en una columna no son NULOS.
 - `CHECK`: comprueba si se cumple una condición específica entre atributos.
 
-**Ejemplo usando constraints en una sentencia ALTER TABLE:**
+**Ejemplos usando constraints en una sentencia CREATE TABLE y ALTER TABLE:**
 ```SQL
 CREATE TABLE participa (
     DNI                 CHAR(9),
@@ -155,6 +154,11 @@ CREATE TABLE participa (
         ON DELETE NO ACTION 
         ON UPDATE CASCADE
 );
+
+ALTER TABLE instituto
+	CONSTRAINT DNI_valorunico
+		UNIQUE (DNI)
+;
 ```
 
 
