@@ -72,8 +72,7 @@ CREATE TABLE alumnos(
 
 ## La sentencia DROP
 
-`DROP` es una sentencia que no sirve sólo para eliminar datos y restricciones de una tabla (o base de datos), sino que también elimina la estructura de dicha tabla. Podríamos decir que no posee ningún tipo de vuelta atrás.
-
+`DROP` es una sentencia que sirve para eliminar la estructura de una tabla.
 ✔️Sintaxis:
 ```console
 DROP TABLE                                     
