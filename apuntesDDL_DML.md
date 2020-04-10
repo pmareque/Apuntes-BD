@@ -4,6 +4,9 @@
   - [La sentencia ALTER](#la-sentencia-alter)
   - [CONSTRAINT o restricciones en SQL](#CONSTRAINT-o-restricciones-en-SQL)
 - [SQL DML (Data Manipulation Language)](#SQL-DML-Data-Manipulation-Language)
+  - [La sentencia INSERT](#La-sentencia-INSERT)
+  - [La sentencia UPDATE](#La-sentencia-UPDATE)
+  - [La sentencia DELETE](#La-sentencia-DELETE)
   
 # SQL DDL (Data Definition Language)
 
@@ -166,7 +169,7 @@ ALTER TABLE instituto
 
 **DML** es el sublenguaje SQL que actúa sobre los **datos** de la base de datos. Como su nombre indica, este lenguaje se usa para manipular datos, lo que permite al usuario introducir(`INSERT`), modificar(`UPDATE`) o eliminar(`DELETE`) todo tipo de datos.
 
-## INSERT
+## La sentencia INSERT
 
 `INSERT` permite insertar valores en formato fila en una tabla. Su sintaxis básica es la siguiente:
 ```SQL
@@ -187,7 +190,7 @@ value2,
 ...
 valueN);
 ```
-## UPDATE
+## La sentencia UPDATE
 
 `UPDATE` permite modificar los valores de uno o más registros de una tabla. Su sintaxis es la siguiente (la condición WHERE es opcional):
 
@@ -208,7 +211,7 @@ SET
    columnN_name = valueN;
 ```
 
-## DELETE
+## La sentencia DELETE
 
 `DELETE` permite eliminar filas de una tabla. Su sintaxis es la siguiente(la condición WHERE es opcional):
 ```SQL
