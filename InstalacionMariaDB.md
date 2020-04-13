@@ -17,9 +17,9 @@ Para poder instalar MariaDB, tenemos que añadir un repositorio de MariaDB en el
 
 Después de ejecutar estos comandos, podremos pasar a la **instalación** del server MariaDB. Primero haremos un update para que liste el repositorio que hemos añadido, y luego ejecutaremos el comando de instalación:
 
-[
-`sudo apt update
-sudo apt -y install mariadb-server mariadb-client`](/mariaDB5.PNG)
+[`sudo apt update`](/mariaDB5.PNG)
+
+[`sudo apt -y install mariadb-server mariadb-client`](/mariaDB5.PNG)
 
 A continuación aparecerá una ventana que pedirá proporcionar una contraseña de root de MariaDB. Si no pidió establecer una contraseña de root, debemos ejecutar el comando:
 
