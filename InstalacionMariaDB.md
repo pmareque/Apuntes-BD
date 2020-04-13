@@ -14,10 +14,10 @@ Para poder instalar MariaDB, tenemos que añadir un repositorio de MariaDB en el
 
 `sudo add-apt-repository "deb [arch=amd64,arm64,ppc64el] http://mariadb.mirror.liquidtelecom.com/repo/10.4/ubuntu $(lsb_release -cs) main"`
 
-Después de ejecutar estos comandos, podremos pasar a la instalación del server MariaDB. Primero haremos un update para que liste el repositorio que hemos añadido, y luego ejecutaremos el comando de instalación:
-
+Después de ejecutar estos comandos, podremos pasar a la **instalación** del server MariaDB. Primero haremos un update para que liste el repositorio que hemos añadido, y luego ejecutaremos el comando de instalación:
+[
 `sudo apt update
-sudo apt -y install mariadb-server mariadb-client`
+sudo apt -y install mariadb-server mariadb-client`](/mariaDB10.PNG)
 
 A continuación aparecerá una ventana que pedirá proporcionar una contraseña de root de MariaDB. Si no pidió establecer una contraseña de root, debemos ejecutar el comando:
 
