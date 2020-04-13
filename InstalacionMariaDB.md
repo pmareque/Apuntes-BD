@@ -36,3 +36,4 @@ Por último, el siguiente comando nos permitirá el acceso a MariaDB con el usua
 
 `mysql -u root -p`
 
+
