@@ -36,6 +36,6 @@ installation should now be secure.
 
 `mysql -u root -p`
 
-[comandos](/mariaDB10.PNG)
+[comando](/mariaDB10.PNG)
 
 
