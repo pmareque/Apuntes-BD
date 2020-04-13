@@ -2,3 +2,4 @@
 
 - [DDL y DML](apuntesDDL_DML.md)
 - [Instalación del SGBD MariaDB](InstalacionMariaDB.md)
+- [DQL](apuntesbd.md)
