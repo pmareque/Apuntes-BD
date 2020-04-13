@@ -32,8 +32,10 @@ installation should now be secure.
 
 >Thanks for using MariaDB!
 
-Por último, el siguiente comando nos permitirá el acceso a MariaDB con el usuario root. Pedirá la contraseña de root que establecimos anteriormente y la línea de comandos habrá cambiado para indicarnos que estamos dentro de MariaDB (`MariaDB [(none)]>  `):
+**Por último**, el siguiente comando nos permitirá el acceso a MariaDB con el usuario root. Pedirá la contraseña de root que establecimos anteriormente y la línea de comandos habrá cambiado para indicarnos que estamos dentro de MariaDB (`MariaDB [(none)]>  `):
 
 `mysql -u root -p`
+
+[acceso a MariaDB](/MariaDB10.PNG)
 
 
